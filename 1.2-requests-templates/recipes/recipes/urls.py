@@ -1,3 +1,6 @@
+from django.urls import path
+from calculator.views import home, recipies
+
 """recipes URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -14,8 +17,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.urls import path
 
 urlpatterns = [
+    path('', home, name='home'),
+    path('<str:recipy>/', recipies, name='recipies'),
     # здесь зарегистрируйте вашу view-функцию
 ]
