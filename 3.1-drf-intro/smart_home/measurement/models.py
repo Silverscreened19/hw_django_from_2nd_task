@@ -7,7 +7,7 @@ from django.db import models
 class Sensor(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название датчика')
     description = models.CharField(
-        max_length=300, verbose_name='Описание датчика')
+        max_length=300, verbose_name='Описание датчика', blank=True)
 
     def __str__(self):
         return self.name

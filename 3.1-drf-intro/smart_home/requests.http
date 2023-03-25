@@ -13,8 +13,8 @@ POST {{baseUrl}}/sensors/
 Content-Type: application/json
 
 {
-  "name": "шоуц-8",
-  "description": "Датчик в туалете"
+  "name": "563",
+  "description": ""
 }
 
 ###
