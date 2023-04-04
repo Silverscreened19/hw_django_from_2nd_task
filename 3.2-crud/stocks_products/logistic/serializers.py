@@ -41,7 +41,15 @@ class StockSerializer(serializers.ModelSerializer):
         # обновляем склад по его параметрам
         stock = super().update(instance, validated_data)
         for position in positions:
-            obj, created = StockProduct.objects.filter(stock_id=stock.id).update_or_create(
+            # obj, created = StockProduct.objects.filter(stock_id=stock.id).update_or_create(
+            #     stock=stock,
+            #     product=position['product'],
+            #     defaults={
+            #         'quantity': position['quantity'],
+            #         'price': position['price']
+            #     }
+            # )
+            obj, created = StockProduct.objects.update_or_create(
                 stock=stock,
                 product=position['product'],
                 defaults={
