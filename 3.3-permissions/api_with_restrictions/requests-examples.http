@@ -15,37 +15,37 @@ Content-Type: application/json
 Authorization: Token 09cd4e766ae6cfb9a1e251be698c627d16a921d1
 
 {
-  "title": "slelf",
-  "description": "try closed",
-  "status": "CLOSED"
+  "title": "14/04",
+  "description": "test 14/04"
 }
 
 ###
 
 # попытка поменять объявление
-PATCH {{baseUrl}}/advertisements/37/
+PATCH {{baseUrl}}/advertisements/101/
 Content-Type: application/json
-# Authorization: Token f331f3e743f96c377f5f4cd1d054800acd91a482
-Authorization: Token 09cd4e766ae6cfb9a1e251be698c627d16a921d1
+Authorization: Token f331f3e743f96c377f5f4cd1d054800acd91a482
+# Authorization: Token 09cd4e766ae6cfb9a1e251be698c627d16a921d1
 
 {
-  "status": "OPEN"
+  "description": "try open",
+  "status": "CLOSED"
 }
 
 ###
 
 # фильтрация по создателю
-GET {{baseUrl}}/advertisements/?creator=2&ordering=id&status=OPEN
+GET {{baseUrl}}/advertisements/?creator=2&ordering=id
 Content-Type: application/json
 
 ###
 
 # фильтрация по дате
-GET {{baseUrl}}/advertisements/?created_at_before=2023-04-04
+GET {{baseUrl}}/advertisements/?created_at_before=2023-04-06
 Content-Type: application/json
 
 ###
 
-DELETE {{baseUrl}}/advertisements/19/
+DELETE {{baseUrl}}/advertisements/101/
 Authorization: Token f331f3e743f96c377f5f4cd1d054800acd91a482
 # Authorization: Token 09cd4e766ae6cfb9a1e251be698c627d16a921d1
